@@ -3,17 +3,17 @@ import React, {useState} from 'react';
 import Form from './components/Form';
 
 function App() {
-  const [members, setMembers] = useState([]);
-  const [values, setValues] = useState({name:'', email:'', role:''});
+  const [members, setMembers] = useState([]); // this is what is submited in values
+  const [values, setValues] = useState({name:'', email:'', role:''}); //this is the input
 
 
   const onSubmit = () => {
-    setMembers(values, ...members)
-    setValues({name:'', email:'', role:''});
+    setMembers([values, ...members]) // add values to members array
+    setValues({name:'', email:'', role:''}); //resets the input so what is typed disappears, good UI!
   }
 
   const onChange = (name, value) => {
-    setValues({...values, [name]: value})
+    setValues({...values, [name]: value}) //spread out those keys in values, [name] = parameter name (name, email role), value= value being input
   }
 
   return (
@@ -29,11 +29,12 @@ function App() {
           <div key={idx}>
             {member.email}, {member.name}, {member.role}
           </div>
-
         )
       })}
     </div>
   );
+  
 }
+
 
 export default App;
