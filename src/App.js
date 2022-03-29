@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Team Builder App</h1>
+      <h1>Signup Sheet</h1>
       <Form
         values={values}
         change={onChange}
@@ -27,7 +27,7 @@ function App() {
       {members.map((member, idx) => {
         return (
           <div key={idx}>
-            Member {idx+1}: {member.name}, {member.email}, {member.role}
+            {idx+1}. {member.name}, {member.email}, {member.role}
           </div>
         )
       })}
