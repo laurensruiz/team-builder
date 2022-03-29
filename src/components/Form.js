@@ -3,13 +3,17 @@ import React from 'react';
 const Form = (props) => {
 
     const handleChange = event => {
+        /*
+        const name =evt.target.name
+        const value =evt.target.value
+        */
         const {name, value} = event.target;
-        props.change(name, value);
+        props.change(name, value); // from app.js onchange (look at what you set for props)
     }
 
     const handleSubmit = event => {
         event.preventDefault();
-        props.submit();
+        props.submit(); // from app.js
     }
 
     return(

@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
-import Form from './components/Form';
+import Form from './components/Form'; //import your child to parent
 
 function App() {
   const [members, setMembers] = useState([]); // this is what is submited in values
@@ -13,7 +13,7 @@ function App() {
   }
 
   const onChange = (name, value) => {
-    setValues({...values, [name]: value}) //spread out those keys in values, [name] = parameter name (name, email role) need brackets, value= value being input
+    setValues({...values, [name]: value}) //spread out those keys in values, [name] = parameter name which indicates the property (name, email role since we ...) need brackets, value= value being input
   }
 
   return (
