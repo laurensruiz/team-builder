@@ -31,12 +31,16 @@ const Form = (props) => {
             />
             </label>
             <label> Role: 
-            <input
-                placeholder="Enter role here"
+            <select
                 value={props.values.role}
                 name="role"
                 onChange={handleChange}
-            />
+            >
+                <option value=""> Select Role </option>
+                <option value="Student"> Student </option>
+                <option value="Instructor"> Instructor </option>
+                <option value="Alumni"> Alumni </option>
+            </select>
             </label>
             <input type="submit" value="Create Team" />
         </form>

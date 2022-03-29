@@ -8,12 +8,12 @@ function App() {
 
 
   const onSubmit = () => {
-    setMembers([values, ...members]) // add values to members array
+    setMembers([values, ...members]) // add values to members array watchout for those brackets!
     setValues({name:'', email:'', role:''}); //resets the input so what is typed disappears, good UI!
   }
 
   const onChange = (name, value) => {
-    setValues({...values, [name]: value}) //spread out those keys in values, [name] = parameter name (name, email role), value= value being input
+    setValues({...values, [name]: value}) //spread out those keys in values, [name] = parameter name (name, email role) need brackets, value= value being input
   }
 
   return (
@@ -27,7 +27,7 @@ function App() {
       {members.map((member, idx) => {
         return (
           <div key={idx}>
-            {member.email}, {member.name}, {member.role}
+            Member {idx+1}: {member.name}, {member.email}, {member.role}
           </div>
         )
       })}
