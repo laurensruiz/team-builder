@@ -8,7 +8,7 @@ const Form = (props) => {
         props.change(name, value);
     }
 
-    handleSubmit = event => {
+    const handleSubmit = event => {
         event.preventDefault();
         props.submit();
     }
@@ -18,7 +18,7 @@ const Form = (props) => {
             <label>Name
             <input
                 placeholder="Enter name here:"
-                value={values.name}
+                value={props.values.name}
                 name="name"
                 onChange={handleChange}
             />
@@ -26,7 +26,7 @@ const Form = (props) => {
             <label>Email
             <input
                 placeholder="Enter email here:"
-                value={values.email}
+                value={props.values.email}
                 name="email"
                 onChange={handleChange}
             />
@@ -34,7 +34,7 @@ const Form = (props) => {
             <label>Role
             <input
                 placeholder="Enter role here:"
-                value={values.role}
+                value={props.values.role}
                 name="role"
                 onChange={handleChange}
             />
